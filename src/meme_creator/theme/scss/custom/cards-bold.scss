@@ -1,0 +1,28 @@
+.card-bold {
+  background-color: $card-bg;
+  border: 0;
+
+  hr {
+    background: #fff;
+  }
+
+  p {
+    color: rgba(255,255,255,.7)
+  }
+
+  &.card-primary {
+    background-color: theme-color("primary");
+  }
+  &.card-success {
+    background-color: theme-color("success");
+  }
+  &.card-info {
+    background-color: theme-color("info");
+  }
+  &.card-warning {
+    background-color: theme-color("warning");
+  }
+  &.card-danger {
+    background-color: theme-color("danger");
+  }
+}

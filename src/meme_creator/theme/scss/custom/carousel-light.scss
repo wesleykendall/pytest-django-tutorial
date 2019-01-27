@@ -1,0 +1,19 @@
+.carousel-light {
+  .carousel-control-next,
+  .carousel-control-prev {
+    text-shadow: none;
+    color: rgba(0,0,0,.3);
+    background-image: none;
+  }
+
+  .carousel-indicators {
+    li {
+      background-color: rgba(0,0,0,.3);
+      border: 0;
+    }
+    .active {
+      background-color: #fff;
+      border: 1px solid theme-color("primary");
+    }
+  }
+}

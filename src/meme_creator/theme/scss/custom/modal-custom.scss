@@ -1,0 +1,12 @@
+body.modal-open {
+  overflow: visible;
+}
+
+.modal-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+[data-toggle="modal"] {
+  cursor: pointer;
+}

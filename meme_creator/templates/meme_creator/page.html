@@ -1,0 +1,65 @@
+{% load bootstrap4 %}
+{% load render_bundle from webpack_loader %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <!-- These meta tags come first. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="{% static 'assets/images/favicons/favicon-32x32.png?v=3' %}" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="{% static 'assets/images/favicons/favicon-16x16.png?v=3' %}" sizes="16x16"/>
+
+    <title>{% block page__head_title %}{{ settings.PROJECT_NAME }}{% endblock %}</title>
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    {% render_bundle 'main' %}
+  </head>
+
+  <body class="{% block page__body_class %}{% endblock %}">
+    <div class="page-alert">
+      {% block page__messages %}
+        {% bootstrap_messages %}
+      {% endblock %}
+    </div>
+
+    <div class="container">
+      {% block page__nav %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+          <a class="navbar-brand" href="#">Meme Generator</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Create Meme</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'user:logout' %}">Log Out</a>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'user:login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'user:register' %}">Register</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        </nav>
+      {% endblock %}
+    </div>
+
+    <div class="container page-content {% block page__container_class %}{% endblock %}">  
+      {% block page__content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

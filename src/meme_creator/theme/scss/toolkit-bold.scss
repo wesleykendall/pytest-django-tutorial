@@ -1,0 +1,71 @@
+// Marketing Theme
+$theme-colors: (
+  primary: #EEE04A,
+  secondary: #d4dbe0,
+  success: #5cb85c,
+  info: #5bc0de,
+  warning: #f0ad4e,
+  danger: #d9534f,
+  light: #f5f8fa,
+  dark: #122a38
+);
+
+@import "./variables.scss";
+
+// General
+$body-bg: #000;
+$navbar-transparent-color: #000;
+
+// cards
+$card-bg:             #151515;
+$card-border-radius:  0;
+$card-spacer-x:       30px;
+$card-danger-border:  theme-color("danger");
+
+// button colors
+$btn-secondary-color:  #fff;
+$btn-secondary-bg:     #444;
+$btn-secondary-border: transparent;
+$btn-primary-color:  #000;
+$btn-primary-bg:     theme-color("primary");
+$btn-primary-border: theme-color("primary");
+$link-color:         theme-color("primary");
+
+// hr
+$hr-border:         #fff;
+
+// blocks
+$block-bg-inverted: #151515;
+
+// Grid containers
+$container-max-widths: (
+  md: 700px + $grid-gutter-width,
+  lg: 900px + $grid-gutter-width,
+  xl: 1100px + $grid-gutter-width
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+// Stage
+$stage-bg:                   #000;
+$stage-shelf-width:          250px;
+$stage-toggle-offset:        20px;
+$stage-toggle-zindex:        100;
+$stage-toggle-padding:       4px 12px;
+$stage-toggle-color:         #fff;
+$stage-toggle-bg:            #000;
+$stage-toggle-border-radius: 0;
+$stage-toggle-hover-color:   #fff;
+$stage-toggle-hover-bg:      #000;
+
+@import "./components.scss";
+
+// Global Overrides
+html {
+  background-color: $body-bg;
+}
+body {
+  position: relative;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}

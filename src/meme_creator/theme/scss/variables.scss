@@ -1,0 +1,177 @@
+@import "./bootstrap/_functions.scss";
+@import "./bootstrap/_variables.scss";
+
+// deleted bs.4 vars
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+$font-size-xs:      .75rem !default;
+$nav-tabs-active-link-hover-bg: $body-bg !default;
+$nav-pills-active-weight: 500;
+
+// icons
+$icon-font-path: "../fonts/";
+$icon-font-name: "toolkit-entypo";
+
+
+// text
+$text-color: #000;
+$letter-spacing-base: -.00em;
+
+
+// Spacing
+$spacer:            20px;
+$spacer-x:          $spacer;
+$spacer-y:          $spacer;
+$grid-gutter-width: 20px;
+
+
+// Typography
+$font-size-root: 18px;
+$font-family-sans-serif:  "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:       "Lora", Georgia, "Times New Roman", Times, serif;
+$font-family-base:        $font-family-sans-serif;
+$font-weight-base:        300;
+$line-height-base:        1.6;
+
+
+// For h1-h6
+$headings-font-family: $font-family-sans-serif;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$headings-small-color: inherit;
+
+
+// For .lead
+$lead-font-size:      ($font-size-base * 1.15);
+$lead-font-size-sm:   ($font-size-base * 1.25);
+$lead-font-weight:    300;
+$lead-line-height:    1.6;
+$lead-letter-spacing: 0;
+
+
+// Buttons
+$btn-font-size:      16px;
+$btn-font-weight:    700;
+$btn-text-transform: none;
+$btn-letter-spacing: normal;
+$btn-padding-x-xs:   1px !default; // TODO: Change this to REMs since most of v4 in REMS
+$btn-padding-y-xs:   5px !default; // TODO: Change this to REMs since most of v4 in REMS
+
+$btn-toolbar-divider-bg: $gray-200;
+
+$btn-primary-bg:     theme-color("primary");
+$btn-primary-border: theme-color("primary");
+$link-color:         theme-color("primary");
+
+
+// Container sizes
+$container-desktop:       (860px + $grid-gutter-width);
+$container-md:            $container-desktop;
+$container-large-desktop: (1000px + $grid-gutter-width);
+$container-lg:            $container-large-desktop;
+
+
+// nav-bordered
+$nav-bordered-color:              #fff;
+$nav-bordered-color-active:       theme-color("primary");
+$nav-bordered-font-weight:        700;
+$nav-bordered-font-weight-active: 700;
+
+
+// nav header
+$nav-header-color: $gray-500;
+
+
+// Grid containers
+$container-max-widths: (
+  md: 700px + $grid-gutter-width,
+  lg: 900px + $grid-gutter-width,
+  xl: 1100px + $grid-gutter-width
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Navbar
+$navbar-bg:                #fff;
+$navbar-link-active-color: #333;
+$navbar-border:            transparent;
+$navbar-link-active-bg:    transparent;
+$navbar-nav-active-font-weight:    inherit;
+
+// Navbar inverse
+$navbar-inverse-border: transparent;
+$navbar-inverse-bg:     theme-color("primary");
+
+// Navbar - transparent
+$navbar-transparent-color:               #fff;
+$navbar-transparent-bg:                  transparent;
+$navbar-transparent-border:              transparent;
+$navbar-transparent-link-color:          $navbar-transparent-color;
+$navbar-transparent-link-hover-color:    darken($navbar-transparent-color, 10%);
+$navbar-transparent-link-hover-bg:       transparent;
+$navbar-transparent-link-active-color:   $navbar-transparent-link-hover-color;
+$navbar-transparent-link-active-bg:      transparent;
+$navbar-transparent-link-disabled-color: lighten($navbar-transparent-color, 10%);
+$navbar-transparent-link-disabled-bg:    transparent;
+$navbar-transparent-brand-color:         $navbar-transparent-color;
+$navbar-transparent-brand-hover-color:   darken($navbar-transparent-color, 10%);
+$navbar-transparent-brand-hover-bg:      transparent;
+$navbar-transparent-toggler-hover-bg:     fade($navbar-transparent-color, 10%);
+$navbar-transparent-toggler-icon-bar-bg:  $navbar-transparent-color;
+$navbar-transparent-toggler-border-color: $navbar-transparent-color;
+$navbar-transparent-toggler-bg: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+
+// panels
+$card-border-color: transparent;
+
+
+// Jumbotron
+$jumbotron-heading-font-size: ($font-size-base * 4.5);
+
+
+// Block
+$block-color:              inherit;
+$block-bg:                 #fff;
+$block-color-inverted:     #fff;
+$block-bg-inverted:        #000;
+$block-title-font-size-sm: $font-size-base * 4;
+$block-title-font-size:    $font-size-base * 3;
+$block-lead-font-size-sm:  $font-size-base * 1.5;
+$block-lead-font-size:     $font-size-base * 1.3;
+$block-vertical-padding:   120px;
+
+
+// Callouts
+$callout-padding:       15px 20px;
+$callout-border-radius: $border-radius;
+
+
+// Stage
+$stage-bg:                    $body-bg;
+$stage-shelf-width:           250px;
+$stage-toggle-offset:         20px;
+$stage-toggle-zindex:         100;
+$stage-toggle-padding:        4px 12px;
+$stage-toggle-color:          #fff;
+$stage-toggle-bg:             rgba(0,0,0,.1);
+$stage-toggle-border-radius:  $border-radius;
+$stage-toggle-hover-color:    #fff;
+$stage-toggle-hover-bg:       $link-color;
+
+
+// zoom
+$zoom-overlay-bg: #000;
+$zindex-zoom: 1080;
+
+
+// Custom forms
+$custom-select-color:       $input-color;
+$custom-select-bg:          $input-bg;
+$custom-select-disabled-bg: $input-disabled-bg;
+$custom-control-indicator-bg:     $input-bg;
+$custom-control-indicator-border: rgba(0,0,0,.15);
+$custom-control-indicator-checked-bg:      theme-color("primary");
+$custom-control-indicator-checked-border:  theme-color("primary");
+$custom-control-indicator-active-bg:       lighten(theme-color("primary"), 15%);
+$custom-control-indicator-active-border:   lighten(theme-color("primary"), 15%);
+$custom-control-indicator-disabled-bg:     darken($input-bg, 5%);
+$custom-control-indicator-disabled-border: $custom-control-indicator-border;

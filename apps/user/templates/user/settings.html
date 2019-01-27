@@ -1,0 +1,38 @@
+{% extends 'meme_creator/form.html' %}
+
+{% load avatar from user %}
+{% load modal from meme_creator %}
+{% load render_bundle from webpack_loader %}
+
+{% block page__bundle %}
+  {% render_bundle 'user__settings' %}
+{% endblock %}
+
+{% block page__nav_title %}
+  Settings
+{% endblock %}
+
+{% block pane__content %}
+  {{ block.super }}
+
+  {% modal 'avatar-picker' title='Choose an Avatar' class='modal-lg' %}
+    {% for group, avatars in view.avatars %}
+      <div>
+        <h5 class="mb-3">{{ group }}</h5>
+        <div class="row">
+          {% for avatar_slug, avatar_name in avatars %}
+            <div class="d-inline-block col-lg-2 col-md-3 col-4 text-center pb-3">
+              <a href="#" data-avatar="{{ avatar_slug }}">
+                <div>{{ avatar_slug|avatar }}</div>
+                <small class="text-muted text-center">{{ avatar_name }}</small>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+        {% if not forloop.last %}
+          <hr/>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endmodal %}
+{% endblock %}

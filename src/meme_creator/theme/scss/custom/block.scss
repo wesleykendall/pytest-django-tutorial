@@ -1,0 +1,229 @@
+//
+// Block
+// --------------------------------------------------
+.block {
+  position: relative;
+  width: 100%;
+  padding: 60px 30px;
+  color: $block-color;
+  background-color: $block-bg;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.block-overflow-hidden {
+  overflow: hidden;
+}
+.block-bg-clip {
+  position: absolute;
+  top: -25px;
+  right: 0;
+  bottom: -25px;
+  left: 0;
+  overflow: hidden;
+}
+.block-bg {
+  position: absolute;
+  top: 25px;
+  right: -50px;
+  bottom: 25px;
+  left: -50px;
+  overflow: hidden;
+  transform: rotate(-2deg);
+}
+.block-bg-img {
+  position: absolute;
+  top: -25px;
+  bottom: -25px;
+  right: 0;
+  left: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(2deg);
+}
+.block-inverse .block-bg-img {
+  background-color: #000000;
+}
+.block-bg-img-top {
+  background-position: top;
+}
+.block-bg-img-bottom {
+  background-position: bottom;
+}
+.block-bordered-lg:before,
+.block-bordered:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  content: '';
+  width: 33%;
+  margin: 0 auto;
+  border-top: 1px solid;
+  border-top-color: #ccc; // ie 8
+  border-top-color: rgba(0, 0, 0, .1);
+}
+.block-bordered-lg:before {
+  width: 80%;
+}
+.block-paralax {
+  background-attachment: fixed;
+}
+.block-inverse {
+  color: $block-color-inverted;
+  background-color: $block-bg-inverted;
+
+  &.block-bordered:before,
+  hr {
+    border-color: rgba(255, 255, 255, .2);
+  }
+
+  h1,h2,h3,h4,h5,h6,
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    color: inherit;
+  }
+
+  .btn-outline.btn-secondary {
+    @include button-outline-variant(#fff);
+  }
+
+  .btn-outline.btn-secondary,
+  .btn-outline {
+    &:focus,
+    &.focus,
+    &:hover,
+    &:active,
+    &.active,
+    .open > .dropdown-toggle {
+      color: #000;
+
+      &:hover,
+      &:focus,
+      &.focus {
+        color: #000;
+      }
+    }
+  }
+}
+
+.block-transparent {
+  background-color: transparent;
+}
+.block-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  & > iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+.block-foreground {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+.block-fill-height {
+  display: table;
+  width: 100%;
+  height: 110vh;
+}
+
+// type
+.block-label {
+  margin-bottom: 20px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  color: theme-color("primary");
+  text-transform: uppercase;
+}
+.h1.block-title,
+h1.block-title {
+  font-size: $block-title-font-size;
+  line-height: 1.2;
+}
+.block .lead {
+  font-size: $block-lead-font-size;
+}
+.block-angle {
+  margin-bottom: -25px;
+}
+
+// block alignment
+.block-xs-top,
+.block-xs-bottom,
+.block-xs-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+.block-xs-bottom {
+  vertical-align: bottom;
+}
+.block-xs-top {
+  vertical-align: top;
+}
+
+@include media-breakpoint-up(sm) {
+  .block-sm-top,
+  .block-sm-bottom,
+  .block-sm-middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .block-sm-bottom {
+    vertical-align: bottom;
+  }
+  .block-sm-top {
+    vertical-align: top;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .block-md-top,
+  .block-md-bottom,
+  .block-md-middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .block-md-bottom {
+    vertical-align: bottom;
+  }
+  .block-md-top {
+    vertical-align: top;
+  }
+  .h1.block-title,
+  h1.block-title {
+    font-size: $block-title-font-size-sm;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .block-lg-top,
+  .block-lg-bottom,
+  .block-lg-middle {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .block-lg-bottom {
+    vertical-align: bottom;
+  }
+  .block-lg-top {
+    vertical-align: top;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .block {
+    padding: $block-vertical-padding 1rem;
+
+    &:not(.block-secondary) .lead {
+      font-size: $block-lead-font-size-sm;
+    }
+  }
+}

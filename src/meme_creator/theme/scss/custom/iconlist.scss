@@ -1,0 +1,22 @@
+.iconlist {
+  list-style: none;
+  padding-left: 0;
+
+  > li {
+    padding: 5px 0 5px 25px;
+
+    > .icon {
+      float: left;
+      margin-left: -25px;
+      opacity: .5;
+    }
+  }
+
+  > .active {
+    color: theme-color("primary");
+
+    .icon {
+      opacity: 1;
+    }
+  }
+}

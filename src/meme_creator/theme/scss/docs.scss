@@ -1,0 +1,50 @@
+// generate docs css
+
+@import "./variables.scss";
+@import "./bootstrap/_mixins.scss";
+@import "./custom/syntax.scss";
+@import "./custom/docs.scss";
+
+.docs-content > h3,
+.docs-content > h2  {
+  margin-top: 50px;
+}
+
+.highlight {
+  background-color: #f5f7f9;
+  border: 1px solid #DDE2E6;
+}
+.docs-example {
+  background-color: transparent;
+}
+
+.highlight pre code {
+  color: #3E4952;
+}
+
+// code styles
+.gp {
+  color: theme-color("primary");
+}
+
+// component overides
+.docs-icons {
+  color: $gray-500;
+}
+.docs-example .featured-list .icon,
+.docs-example .featured-list h3 {
+  color: theme-color("primary");
+}
+.docs-example .text-ribbon {
+  color: #fff;
+}
+.docs-example .panel-bold {
+  color: #fff;
+}
+.docs-example .carousel-light {
+  background-color: #fff;
+}
+.docs-bg {
+  background-color: theme-color("primary");
+  background-image: linear-gradient(to bottom, darken(theme-color("primary"), 15%) 0, theme-color("primary") 100%);
+}

@@ -1,0 +1,14 @@
+{% extends 'meme_creator/form.html' %}
+
+{% block page__nav_title %}
+  Log In
+{% endblock %}
+
+{% block form__fields %}
+  {{ block.super }}
+  <input type="hidden" name="next" value="{{ next }}" />
+{% endblock %}
+
+{% block form__submit_title %}
+  Log In
+{% endblock %}

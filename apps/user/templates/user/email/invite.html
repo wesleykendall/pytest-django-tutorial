@@ -1,0 +1,20 @@
+{% extends 'email/generic_email_cta.html' %}
+
+{% load email %}
+
+{% block generic_email__content %}
+  {{ settings.PROJECT_NAME }} here. I'm glad we could move on to the next part of our journey together.
+  Are you ready to see my private parts?
+  <br/><br/>
+  I'm talking about seeing your journal.. Get your mind out of the gutter!
+  <br/><br/>
+  Click below to create your account.
+{% endblock %}
+
+{% block generic_email_cta__url %}
+  {% fullurl 'user:register' code=user.code %}
+{% endblock %}
+
+{% block generic_email_cta__text %}
+  Create Account
+{% endblock %}

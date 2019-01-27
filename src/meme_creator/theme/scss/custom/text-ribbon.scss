@@ -1,0 +1,92 @@
+.text-ribbon {
+  position: relative;
+  left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #000;
+  overflow: hidden;
+}
+.text-ribbon:before {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  content: '';
+  width: 20px;
+  height: 100%;
+  bottom: 0;
+  background-color: inherit;
+}
+.text-ribbon span {
+  position: relative;
+  left: -10px;
+}
+
+// this is the super legit way to do text-ribbons,
+// but we only allow firefox to do this for browser support reasons
+@-moz-document url-prefix() {
+  .text-ribbon {
+    box-decoration-break: clone;
+    left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  // undo hack above for firefox as well
+  .text-ribbon span {
+    left: auto;
+  }
+  .text-ribbon:before {
+    display: none;
+  }
+}
+
+.text-ribbon-input {
+  display: block;
+  width: 100%;
+  margin: 0 0 10px;
+  padding: 10px;
+  font-weight: normal;
+  color: inherit;
+  background-color: #000;
+  border: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
+
+  &::placeholder {
+    color: #000;
+    // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526.
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.text-ribbon-inputs-split {
+  @include clearfix();
+
+  .text-ribbon-input {
+    float: left;
+    width: 49%;
+
+    + .text-ribbon-input {
+      margin-left: 2%;
+    }
+  }
+}
+
+.text-ribbon-primary {
+  background-color: theme-color("primary");
+}
+.text-ribbon-success {
+  background-color: theme-color("success");
+}
+.text-ribbon-warning {
+  background-color: theme-color("warning");
+}
+.text-ribbon-danger  {
+  background-color: theme-color("danger");
+}
+.text-ribbon-info    {
+  background-color: theme-color("info");
+}

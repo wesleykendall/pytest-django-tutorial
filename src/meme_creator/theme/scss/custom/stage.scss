@@ -1,0 +1,55 @@
+//
+// Wrapper for all page contents, including shelf
+//
+
+.stage {
+  background-color: $stage-bg;
+  position: relative;
+}
+
+
+//
+// Shelf contents that is shown/hidden
+//
+
+.stage-shelf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: $stage-shelf-width;
+  padding-top: 30px;
+  background-color: darken($stage-bg, 5%);
+}
+.stage-shelf-right {
+  left: auto;
+  right: 0;
+}
+
+
+//
+// Button-based toggle for showing/hiding the stage shelf
+//
+
+.stage-toggle {
+  position: absolute;
+  top: $stage-toggle-offset;
+  left: $stage-toggle-offset;
+  z-index: $stage-toggle-zindex;
+  padding: $stage-toggle-padding;
+  color: $stage-toggle-color;
+  background-color: $stage-toggle-bg;
+  border-radius: $stage-toggle-border-radius;
+
+  &:hover,
+  &:focus {
+    color: $stage-toggle-hover-color;
+    text-decoration: none;
+    background-color: $stage-toggle-hover-bg;
+  }
+}
+.stage-toggle-right {
+  left: auto;
+  right: $stage-toggle-offset;
+}

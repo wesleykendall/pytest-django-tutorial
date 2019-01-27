@@ -1,0 +1,42 @@
+//
+// Featured List
+// --------------------------------------------------
+
+.featured-list {
+  list-style: none;
+  padding: 0;
+
+  .featured-list-icon-text {
+    font-size: 16px;
+  }
+
+  li {
+    position: relative;
+    padding-left: 80px;
+  }
+}
+
+.featured-list-icon {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  display: inline-block;
+  font-size: 36px;
+  text-align: center;
+  line-height: 0;
+  width: 60px;
+}
+
+.featured-list-bordered {
+  li {
+    position: relative;
+    padding-left: 110px;
+  }
+  .featured-list-icon {
+    border: 1px solid $gray-200;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    line-height: 89px;
+  }
+}

@@ -1,0 +1,39 @@
+//
+// Callouts
+//
+
+// Base styles
+.callout {
+  position: relative;
+  display: table;
+  width: 100%;
+  margin-bottom: 1rem;
+  color: $text-color;
+  background-color: #fff;
+  border-radius: $callout-border-radius;
+  border: 1px solid $gray-200;
+}
+
+// Improve alignment and spacing of inner content
+.callout-content {
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+
+  > p + p {
+    margin-top: 5px;
+  }
+}
+
+.callout-content,
+.callout-secondary {
+  display: table-cell;
+  padding: $callout-padding;
+  vertical-align: middle;
+}
+.callout-secondary {
+  width: 1%;
+  background-color: #f5f7f9;
+  border-left: 1px solid $gray-200;
+}
