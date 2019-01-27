@@ -8,9 +8,6 @@ indent() {
 
 echo "----->Post-compile hook"
 
-echo "-----> Running webpack"
-npm run build
-
 echo "-----> Collecting static files"
 python manage.py collectstatic --noinput  2>&1 | sed '/^Copying/d;/^$/d;/^ /d' | indent
 

@@ -1,0 +1,20 @@
+{% extends 'meme_creator/page.html' %}
+
+{% block page__content %}
+  {% if memes %}
+    <div class="card-columns">
+      {% for meme in memes|slice:":15" %}
+        <a href="{% url 'meme:create' id=meme.id url=meme.url %}" class="choose-meme-link">
+          <div class="card">
+            <img class="card-img-top" src="{{ meme.url }}" alt="Meme image">
+            <div class="card-body">
+              <h5 class="card-title text-dark">{{ meme.name }}</h5>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <o>Woops! Looks like we're having issues with our meme generator API. Try again later.</p>
+  {% endif %}
+{% endblock %}

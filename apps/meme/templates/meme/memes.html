@@ -1,9 +1,23 @@
 {% extends 'meme_creator/page.html' %}
 
-{% block page__nav_title %}
-    Your Memes
-{% endblock %}
+{% load humanize %}
 
 {% block page__content %}
-    Your memes
+  {% if memes %}
+    <div class="card-columns">
+      {% for meme in memes %}
+        <a>
+          <div class="card">
+            <img class="card-img-top meme-img" src="{{ meme.url }}" alt="Meme image">
+            <div class="card-footer text-muted">
+              Created {{ meme.creation_time|naturaltime }}
+            </div>
+          </div>
+        </a>
+      {% empty %}
+    {% endfor %}
+  </div>
+  {% else %}
+    <p class="text-center">You haven't created any memes yet! Create one <a href="{% url 'meme:choose' %}">here</a>.</p>
+  {% endif %}
 {% endblock %}

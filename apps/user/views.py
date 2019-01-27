@@ -4,12 +4,9 @@ import django.contrib.auth.forms as auth_forms
 import django.contrib.auth.views as auth_views
 from django.views.generic.edit import CreateView
 
-import apps.user.forms as user_forms
-
 
 class Login(auth_views.LoginView):
     template_name = 'user/login.html'
-    form_class = user_forms.Login
 
 
 class Register(CreateView):

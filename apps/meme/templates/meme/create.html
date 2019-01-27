@@ -1,0 +1,16 @@
+{% extends 'meme_creator/form.html' %}
+
+{% block page__content %}
+  <div class="container">
+    <div class="row">
+      <div class="offset-3 col-6">
+        <img src="{{ view.kwargs.url }}" class="w-100 border mb-3" />
+      </div>
+    </div>
+  </div>
+  {{ block.super }}
+{% endblock %}
+
+{% block form__submit_title %}
+  Create Meme
+{% endblock %}

@@ -27,9 +27,6 @@ class Common(Configuration):
 
     # Project and company-specific settings
     PROJECT_NAME = values.Value('meme_creator')
-    PROTOCOL = values.Value('https')
-    HOST = values.SecretValue()
-    TOP_LEVEL_HOST = values.Value('meme_creator.me')
 
     # Application definition
     INSTALLED_APPS = [
@@ -48,7 +45,6 @@ class Common(Configuration):
         'bootstrap4',
         'django_extensions',
         'stronghold',
-        'webpack_loader',
 
         # Internal apps
         'apps.marketing',
@@ -129,19 +125,8 @@ class Common(Configuration):
     STATIC_URL = '/static/'
     STATIC_ROOT = 'staticfiles'
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'src'),
-    )
     # Cache static files for one year. It is assumed we hash every static file
     WHITENOISE_MAX_AGE = 31536000
-
-    # Webpack
-    WEBPACK_LOADER = {
-        'DEFAULT': {
-            'BUNDLE_DIR_NAME': 'dist/',
-            'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
-        }
-    }
 
     # Logging
     LOGGING = {
@@ -164,6 +149,10 @@ class Common(Configuration):
         },
     }
 
+    # Image Flip API
+    IMG_FLIP_USER = values.SecretValue()
+    IMG_FLIP_PASSWORD = values.SecretValue()
+
 
 class Test(Common):
     """
@@ -179,6 +168,7 @@ class Test(Common):
         'django.db.models.fields.DurationField': lambda: dt.timedelta(minutes=30),
     }
     DDF_FILL_NULLABLE_FIELDS = values.BooleanValue(False)
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
 class Development(Test):

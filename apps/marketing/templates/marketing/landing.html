@@ -1,16 +1,14 @@
 {% extends 'meme_creator/page.html' %}
 
-{% load render_bundle from webpack_loader %}
-
 {% block page__nav %}
 {% endblock %}
 
-{% block page__content %}
-  <div class="block text-center bg-transparent">
+{% block page %}
+  <div class="jumbotron text-center">
     <h1 class="block-title pb-2">
       Welcome to Meme Creator!
     </h1>
-    <a href="{% url 'user:register' %}">Register</a>
-    <a href="{% url 'user:login' %}">Login</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'user:register' %}" role="button">Register</a>
+    <a class="btn btn-primary btn-lg" href="{% url 'user:login' %}" role="button">Log In</a>
   </div>
 {% endblock %}

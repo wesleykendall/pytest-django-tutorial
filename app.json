@@ -1,0 +1,49 @@
+{
+  "name": "basis",
+  "description": "Basis app",
+  "env": {
+    "DISABLE_COLLECTSTATIC": {
+      "description": "Heroku setting to disable Django collectstatic (it is run by bin/post_compile)",
+      "value": "1"
+    },
+    "DJANGO_SECRET_KEY": {
+      "description": "Django SECRET_KEY setting",
+      "generator": "secret"
+    },
+    "DJANGO_CONFIGURATION": {
+      "description": "The django-configurations configuration class to use",
+      "value": "Production"
+    },
+    "DJANGO_ALLOWED_HOSTS": {
+      "description": "What website addresses can access this app",
+      "value": ".herokuapp.com"
+    },
+    "DJANGO_IMG_FLIP_USER": {
+      "description": "The username for your imgflip.com account",
+      "required": true
+    },
+    "DJANGO_IMG_FLIP_PASSWORD": {
+      "description": "The password for your imgflip.com account",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:hobby-dev",
+      "options": {
+        "version": "10"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

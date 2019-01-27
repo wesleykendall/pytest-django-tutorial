@@ -38,7 +38,7 @@ help:
 .PHONY: package_managers
 package_managers:
 ifeq (${OS}, Darwin)
-	brew install node pyenv pipenv 2> /dev/null || true
+	brew install pyenv pipenv 2> /dev/null || true
 # Ensure we remain up to date with pyenv so that new python versions are available for installation
 	brew upgrade pyenv 2> /dev/null || true
 endif
@@ -53,15 +53,9 @@ update_env_files:
 	cp .env.template .env
 
 
-# Builds all node dependencies for a project
-.PHONY: node_dependencies
-node_dependencies: package_managers
-	npm install
-
-
 # Builds all dependencies for a project
 .PHONY: dependencies
-dependencies: package_managers node_dependencies
+dependencies: package_managers
 ifeq (${OS}, Darwin)
 # For local doc deployment
 	brew install libmagic 2> /dev/null || true
@@ -121,8 +115,7 @@ validate:
 # Run tests
 .PHONY: test
 test:
-	pipenv run coverage run -m pytest
-	pipenv run coverage report
+	pipenv run pytest --cov
 
 
 # Run the Django development server
