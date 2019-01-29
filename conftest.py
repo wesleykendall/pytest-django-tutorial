@@ -3,6 +3,13 @@ from django_dynamic_fixture import G
 import pytest
 import responses as responses_
 
+###
+# The following functions are vendored in from the pytest-responses
+# plugin (https://github.com/getsentry/pytest-responses)
+# pytest-responses is still waiting on pytest 4 compatibility, so
+# the plugin code has been copied here for now
+###
+
 
 def pytest_configure(config):
     """Load the test environment and the test django settings"""
@@ -32,6 +39,12 @@ def pytest_runtest_teardown(item):
 def responses():
     with responses_.RequestsMock() as rsps:
         yield rsps
+
+###
+# End vendoring of pytest-responses
+# This code can be removed once https://github.com/getsentry/pytest-responses/pull/9 has been
+# deployed to pypi
+###
 
 
 @pytest.fixture
