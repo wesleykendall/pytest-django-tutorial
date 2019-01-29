@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "fac54e91ebfdf38a9ab0d1d86fc4f3c33bba47c7421b70a0b18434954ecdf948"
+            "sha256": "82051dba3361be238291f901f74c444e9686cc6897bcb7eedf76209c4992e422"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -243,6 +243,13 @@
         }
     },
     "develop": {
+        "apipkg": {
+            "hashes": [
+                "sha256:37228cda29411948b422fae072f57e31d3396d2ee1c9783775980ee9c9990af6",
+                "sha256:58587dd4dc3daefad0487f6d9ae32b4542b185e1c36db6993290e7c41ca2b47c"
+            ],
+            "version": "==1.5"
+        },
         "astroid": {
             "hashes": [
                 "sha256:292fa429e69d60e4161e7612cb7cc8fa3609e2e309f80c224d93a76d5e7b58be",
@@ -333,6 +340,13 @@
             ],
             "index": "pypi",
             "version": "==2.0.0"
+        },
+        "execnet": {
+            "hashes": [
+                "sha256:a7a84d5fa07a089186a329528f127c9d73b9de57f1a1131b82bb5320ee651f6a",
+                "sha256:fc155a6b553c66c838d1a22dba1dc9f5f505c43285a878c6f74a79c024750b83"
+            ],
+            "version": "==1.5.0"
         },
         "flake8": {
             "hashes": [
@@ -482,6 +496,13 @@
             "index": "pypi",
             "version": "==0.3.1"
         },
+        "pytest-forked": {
+            "hashes": [
+                "sha256:260d03fbd38d5ce41a657759e8d19bc7c8cfa6d0dcfa36c0bc9742d33bc30742",
+                "sha256:8d05c2e6f33cd4422571b2b1bb309720c398b0549cff499e3e4cde661875ab54"
+            ],
+            "version": "==1.0.1"
+        },
         "pytest-mock": {
             "hashes": [
                 "sha256:53801e621223d34724926a5c98bd90e8e417ce35264365d39d6c896388dcc928",
@@ -489,6 +510,14 @@
             ],
             "index": "pypi",
             "version": "==1.10.0"
+        },
+        "pytest-xdist": {
+            "hashes": [
+                "sha256:4a201bb3ee60f5dd6bb40c5209d4e491cecc4d5bafd656cfb10f86178786e568",
+                "sha256:d03d1ff1b008458ed04fa73e642d840ac69b4107c168e06b71037c62d7813dd4"
+            ],
+            "index": "pypi",
+            "version": "==1.26.1"
         },
         "python-dateutil": {
             "hashes": [

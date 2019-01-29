@@ -34,6 +34,7 @@ beautifulsoup4 = "==4.7.1"
 responses = "==0.10.5"
 schema = "==0.6.8"
 pytest-dotenv = "*"
+pytest-xdist = "==1.26.1"
 
 [requires]
 python_full_version = "3.7.0"
