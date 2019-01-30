@@ -1,6 +1,6 @@
 # pytest-django-tutorial
 
-Meme generator app for the pytest-django talk at the SF Django meetup.
+Meme generator app for the [pytest-django talk at the San Francisco Django meetup](https://www.meetup.com/The-San-Francisco-Django-Meetup-Group/events/258144700/).
 
 Slides for this talk are [here](https://docs.google.com/presentation/d/1lvk9-XvdP13aX0vsgFUdDSpvATAh5aD9TXy0voaH0qA/edit?usp=sharing)
 
