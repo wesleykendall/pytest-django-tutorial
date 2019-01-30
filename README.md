@@ -2,6 +2,8 @@
 
 Meme generator app for the pytest-django talk at the SF Django meetup.
 
+Slides for this talk are [here](https://docs.google.com/presentation/d/1lvk9-XvdP13aX0vsgFUdDSpvATAh5aD9TXy0voaH0qA/edit?usp=sharing)
+
 ## Running the Project Remotely
 
 Deploy to Heroku with the button below
